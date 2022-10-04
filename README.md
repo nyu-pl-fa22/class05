@@ -98,7 +98,7 @@ provide a number of interesting features that are often missing in
 imperative languages.
 
 One of the most important and interesting features of functional
-programming languages is that functions are *first-class* values.  The
+programming languages is that functions are *first-class* values.  This
 means that programs can create new functions at run-time. This can be
 leveraged to build powerful *higher-order* functions: a higher-order
 function either takes a function as an argument or returns a function
@@ -892,7 +892,7 @@ from the definition of `flip`.
 
 A *record* is a collection of named values called *fields* (think of
 them as unordered tuples, whose components have names). Records are
-similar to `struct` types in C and C++ and closely related to object
+similar to `struct` types in C and C++ and are also closely related to object
 types in object-oriented languages.
 
 Record types take the form `{f1: t1; ...; fn: tn}` where the `fi` are
@@ -953,8 +953,8 @@ match expressions as a choice expression on steroids.
 
 A match expression enables you to branch not just on the specific
 value of an expression but more generally on the *shape* of that
-value, allowing you to simultaneously decompose complex compound
-values into their constituents.
+value, allowing you to decompose complex compound
+values into their constituents while matching them against *patterns* describing the shape of the matched values.
 
 In OCaml, match expressions take the form:
 
