@@ -194,8 +194,24 @@ Top-level variable definitions in a module are introduces using `let x
 expression `init`. The scope of the definition is the remainder of the
 module that follows the definition with nested let-bindings or
 subsequent `let` definitions of `x` within that scope yielding holes in
-the scope (as in Scala). The scope of the binding for `x` introduced
-by `let` excludes the definition expression `init`.
+the scope (as in Scala). For example, consider the following code:
+
+```ocaml
+let x = 3
+
+let y =
+  let x = 2 in
+  x + 1
+
+let z = x + 1
+```
+
+Here, the nested let binding of `x` creates a hole in the scope of the
+outer let binding of `x`. That is `y` is bound to the value `3` and
+`z` is bound to the value `4`.
+
+Note that the scope of the binding for `x` introduced by `let`
+excludes the definition expression `init`.
 
 Example:
 
